@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seema Paper Industries — Paper Products Built for Scale</title>
+<meta name="description" content="Seema Paper Industries Pvt. Ltd., Raigarh — notebook and stationery manufacturing since 1978. PEACOCK, U TECH, NOVELITY, KOPYKO, ECOPAGE.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#173B35; --green-2:#1F4D45; --off:#F7F7F3; --kraft:#B27635; --kraft-2:#D49A5A; --sage:#6C8B7A;
+  --ink:#303734; --muted:#69726E; --line:#E2E3DC;
+  --head:'Archivo',system-ui,sans-serif; --sans:'Inter',system-ui,sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--off);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+.wrap{width:min(1260px,100% - 40px);margin-inline:auto}
+section{padding:clamp(80px,10vw,120px) 0}
+h1,h2,h3{font-family:var(--head);line-height:1.05;color:var(--green);letter-spacing:-.02em}
+h2{font-size:clamp(2.2rem,4.6vw,3.8rem);font-weight:800;margin:14px 0 18px}
+h2 span{color:var(--kraft)}
+.label{font-family:var(--head);font-size:.76rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--kraft);display:inline-flex;gap:10px;align-items:center}
+.label::before{content:"";width:10px;height:10px;background:currentColor}
+.lead{color:var(--muted);font-size:1.06rem;max-width:560px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 26px;font-family:var(--head);font-weight:700;font-size:.9rem;letter-spacing:.02em;transition:all .3s var(--ease);position:relative;overflow:hidden}
+.btn svg{width:18px;height:18px;transition:transform .3s var(--ease)}
+.btn:hover svg{transform:translateX(4px)}
+.btn-kraft{background:var(--kraft);color:#fff}
+.btn-kraft:hover{background:#9a6328}
+.btn-green{background:var(--green);color:#fff}
+.btn-green:hover{background:var(--green-2)}
+.btn-line{border:2px solid currentColor}
+.btn-white{background:#fff;color:var(--green)}
+.btn-white:hover{background:var(--off)}
+
+/* topbar + nav */
+.topbar{background:var(--green);color:rgba(255,255,255,.75);font-size:.78rem}
+.topbar .wrap{display:flex;justify-content:space-between;padding:8px 0;gap:20px}
+.topbar b{color:var(--kraft-2);font-weight:600}
+.nav{position:sticky;top:0;z-index:50;background:rgba(247,247,243,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);transition:box-shadow .3s}
+.nav.sh{box-shadow:0 10px 30px -20px rgba(23,59,53,.4)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:20px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo .mk{width:42px;height:42px;background:var(--green);display:grid;place-items:center;position:relative}
+.logo .mk::after{content:"";position:absolute;right:0;top:0;border-style:solid;border-width:0 12px 12px 0;border-color:transparent var(--off) transparent transparent}
+.logo .mk span{font-family:var(--head);font-weight:900;color:#fff;font-size:1.2rem}
+.logo b{font-family:var(--head);font-weight:800;color:var(--green);font-size:1.05rem;letter-spacing:.02em;line-height:1;display:block}
+.logo small{font-size:.62rem;letter-spacing:.3em;color:var(--muted);font-weight:600}
+.nav ul{display:flex;gap:30px;list-style:none}
+.nav ul a{font-weight:500;font-size:.9rem;position:relative;padding:6px 0}
+.nav ul a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:100%;background:var(--kraft);transform:scaleX(0);transform-origin:right;transition:transform .35s var(--ease)}
+.nav ul a:hover::after{transform:scaleX(1);transform-origin:left}
+.nav .acts{display:flex;gap:10px}
+.nav .btn{padding:12px 18px;font-size:.84rem}
+.burger{display:none;width:44px;height:44px;background:var(--green);position:relative}
+.burger span{position:absolute;left:12px;right:12px;height:2px;background:#fff;transition:.3s}
+.burger span:nth-child(1){top:15px}.burger span:nth-child(2){top:21px}.burger span:nth-child(3){top:27px}
+.nav.open .burger span:nth-child(1){top:21px;transform:rotate(45deg)}
+.nav.open .burger span:nth-child(2){opacity:0}
+.nav.open .burger span:nth-child(3){top:21px;transform:rotate(-45deg)}
+
+/* hero */
+.hero{position:relative;min-height:calc(100vh - 110px);display:flex;align-items:center;background:var(--green);color:#fff;overflow:hidden;padding:80px 0}
+.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=2000&q=70&auto=format') center/cover;opacity:.28;transform:scale(1.1);animation:pan 24s ease-in-out infinite alternate}
+@keyframes pan{to{transform:scale(1.18) translateX(-2%)}}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--green) 30%,rgba(23,59,53,.4));z-index:1}
+.ruled{position:absolute;inset:0;z-index:1;background-image:repeating-linear-gradient(0deg,transparent 0 37px,rgba(255,255,255,.06) 37px 38px);mask-image:linear-gradient(90deg,transparent,#000 60%)}
+.margin-line{position:absolute;top:0;bottom:0;left:2.5%;width:2px;background:rgba(212,154,90,.4);z-index:1;transform:scaleY(0);transform-origin:top;animation:grow 1.4s .2s var(--ease) forwards}
+@keyframes grow{to{transform:scaleY(1)}}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:center}
+.hero h1{color:#fff;font-size:clamp(2.5rem,5vw,4.5rem);font-weight:900;margin:22px 0 24px;text-transform:uppercase;letter-spacing:-.03em}
+.hero h1 .ln{display:block;overflow:hidden}
+.hero h1 .ln>span{display:block;transform:translateY(105%);animation:rise .9s var(--ease) forwards}
+.hero h1 .ln:nth-child(2)>span{animation-delay:.12s}
+.hero h1 .ln:nth-child(3)>span{animation-delay:.24s;color:var(--kraft-2)}
+.hero h1 .ln:nth-child(4)>span{animation-delay:.36s;color:var(--kraft-2)}
+@keyframes rise{to{transform:none}}
+.hero p{color:rgba(255,255,255,.8);font-size:1.08rem;max-width:540px}
+.fi{opacity:0;animation:fi .8s var(--ease) forwards}
+@keyframes fi{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.hero .ctas{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap}
+.hero .btn-line{color:#fff}
+.hero .btn-line:hover{background:#fff;color:var(--green);border-color:#fff}
+.stack{position:relative;height:440px;perspective:1200px}
+.nb{position:absolute;width:250px;height:330px;border-radius:4px 14px 14px 4px;box-shadow:0 30px 60px -20px rgba(0,0,0,.55);left:50%;top:50%;transform-style:preserve-3d;opacity:0;animation:nbIn 1.1s var(--ease) forwards;overflow:hidden}
+.nb::before{content:"";position:absolute;left:0;top:0;bottom:0;width:22px;background:rgba(0,0,0,.2)}
+.nb::after{content:"";position:absolute;left:8px;top:14px;bottom:14px;width:6px;background:repeating-linear-gradient(180deg,rgba(255,255,255,.7) 0 6px,transparent 6px 16px);border-radius:3px}
+.nb .t{position:absolute;left:40px;right:20px;bottom:30px;font-family:var(--head);font-weight:900;color:#fff;font-size:1.6rem;line-height:1}
+.nb .t small{display:block;font-size:.62rem;letter-spacing:.24em;font-weight:600;opacity:.8;margin-bottom:6px}
+.nb .lab{position:absolute;left:40px;right:20px;top:30px;height:60px;background:rgba(255,255,255,.9);border-radius:4px;background-image:repeating-linear-gradient(180deg,transparent 0 14px,#ccc 14px 15px)}
+.nb1{background:#C4442F;--r:-14deg;--x:-75%;--y:-46%;animation-delay:.5s}
+.nb2{background:#2D6A8E;--r:-3deg;--x:-50%;--y:-52%;animation-delay:.65s}
+.nb3{background:var(--kraft);--r:9deg;--x:-22%;--y:-48%;animation-delay:.8s}
+@keyframes nbIn{from{opacity:0;transform:translate(-50%,10%) rotate(0)}to{opacity:1;transform:translate(var(--x),var(--y)) rotate(var(--r))}}
+.stack:hover .nb1{transform:translate(-88%,-48%) rotate(-18deg)}
+.stack:hover .nb3{transform:translate(-8%,-46%) rotate(14deg)}
+.nb{transition:transform .6s var(--ease)}
+.iso{position:absolute;right:0;bottom:10px;z-index:3;background:#fff;color:var(--green);padding:14px 18px;font-family:var(--head);font-weight:800;font-size:.9rem;display:flex;gap:10px;align-items:center;box-shadow:0 20px 40px -20px rgba(0,0,0,.5);opacity:0;animation:fi .8s 1.2s var(--ease) forwards}
+.iso svg{width:28px;height:28px;stroke:var(--kraft);fill:none;stroke-width:2}
+
+/* numbers */
+.numbers{background:#fff;border-bottom:1px solid var(--line);padding:0}
+.num-grid{display:grid;grid-template-columns:repeat(6,1fr)}
+.num{padding:40px 24px;border-right:1px solid var(--line);position:relative;overflow:hidden}
+.num:last-child{border-right:0}
+.num::before{content:"";position:absolute;left:0;top:0;height:3px;width:0;background:var(--kraft);transition:width 1.2s var(--ease)}
+.num.in::before{width:100%}
+.num b{font-family:var(--head);font-weight:900;font-size:clamp(1.8rem,3vw,2.6rem);color:var(--green);display:block;line-height:1}
+.num span{font-size:.84rem;color:var(--muted);display:block;margin-top:8px;line-height:1.35}
+.num-note{font-size:.74rem;color:var(--muted);padding:12px 0 18px;font-style:italic}
+
+/* legacy timeline */
+.legacy .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,7vw,100px)}
+.legacy-sticky{position:sticky;top:120px;align-self:start}
+.year-big{font-family:var(--head);font-weight:900;font-size:clamp(5rem,12vw,9rem);line-height:.9;color:transparent;-webkit-text-stroke:2px var(--kraft);margin-top:20px;transition:all .4s}
+.tl{position:relative;padding-left:44px}
+.tl::before{content:"";position:absolute;left:10px;top:0;bottom:0;width:2px;background:var(--line)}
+.tl-fill{position:absolute;left:10px;top:0;width:2px;background:var(--kraft);height:0}
+.tl-item{position:relative;padding:0 0 56px}
+.tl-item::before{content:"";position:absolute;left:-41px;top:4px;width:18px;height:18px;background:var(--off);border:3px solid var(--line);transition:all .4s var(--ease)}
+.tl-item.lit::before{border-color:var(--kraft);background:var(--kraft);transform:rotate(45deg)}
+.tl-item small{font-family:var(--head);font-weight:800;color:var(--kraft);font-size:.9rem;letter-spacing:.1em}
+.tl-item h3{font-size:1.6rem;margin:6px 0 10px;font-weight:800}
+.tl-item p{color:var(--muted)}
+.tl-item img{margin-top:18px;aspect-ratio:16/8;object-fit:cover;width:100%}
+
+/* brands */
+.brands{background:var(--green);color:#fff}
+.brands h2{color:#fff}
+.brands .lead{color:rgba(255,255,255,.7)}
+.brand-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:50px}
+.brand{position:relative;background:var(--c);aspect-ratio:3/4.2;padding:24px 20px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;transition:transform .45s var(--ease),box-shadow .45s;border-radius:2px 12px 12px 2px}
+.brand::before{content:"";position:absolute;left:0;top:0;bottom:0;width:14px;background:rgba(0,0,0,.18)}
+.brand::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 23px,rgba(255,255,255,.07) 23px 24px);opacity:0;transition:opacity .4s}
+.brand:hover{transform:translateY(-12px) rotate(-1.5deg);box-shadow:0 30px 50px -20px rgba(0,0,0,.6)}
+.brand:hover::after{opacity:1}
+.brand small{font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;opacity:.85;position:relative;z-index:1;padding-left:6px}
+.brand b{font-family:var(--head);font-weight:900;font-size:clamp(1.4rem,2.2vw,1.9rem);line-height:1;position:relative;z-index:1;padding-left:6px}
+.brand p{font-size:.82rem;opacity:.88;position:relative;z-index:1;padding-left:6px;max-height:0;overflow:hidden;transition:max-height .5s var(--ease),margin .5s}
+.brand:hover p{max-height:80px;margin-top:10px}
+.brand .go{position:relative;z-index:1;font-family:var(--head);font-weight:700;font-size:.8rem;display:flex;gap:6px;align-items:center;padding-left:6px}
+
+/* products */
+.prod-head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:34px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:30px}
+.filters button{padding:10px 18px;border:1px solid var(--line);font-weight:600;font-size:.85rem;background:#fff;transition:all .25s}
+.filters button.on{background:var(--green);color:#fff;border-color:var(--green)}
+.prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.prod{background:#fff;border:1px solid var(--line);transition:transform .4s var(--ease),box-shadow .4s,opacity .35s;display:flex;flex-direction:column}
+.prod.hide{display:none}
+.prod:hover{transform:translateY(-6px);box-shadow:0 26px 40px -28px rgba(23,59,53,.5)}
+.prod-img{aspect-ratio:4/3;overflow:hidden;position:relative;background:#eee}
+.prod-img img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
+.prod:hover .prod-img img{transform:scale(1.07)}
+.prod-img .specs{position:absolute;inset:auto 0 0 0;background:rgba(23,59,53,.94);color:#fff;padding:14px 16px;font-size:.78rem;transform:translateY(100%);transition:transform .45s var(--ease)}
+.prod:hover .specs{transform:none}
+.prod-body{padding:20px;display:flex;flex-direction:column;gap:6px;flex:1}
+.prod-body small{font-size:.7rem;font-weight:700;letter-spacing:.14em;color:var(--kraft);text-transform:uppercase}
+.prod-body h3{font-size:1.2rem;font-weight:800}
+.prod-actions{display:flex;gap:14px;margin-top:auto;padding-top:14px;font-size:.82rem;font-weight:700;font-family:var(--head)}
+.prod-actions a:first-child{color:var(--green)}
+.prod-actions a:last-child{color:var(--kraft)}
+.prod-actions a:hover{text-decoration:underline}
+
+/* manufacturing process */
+.mfg{background:#fff}
+.process{position:relative;margin-top:60px}
+.proc-line{position:absolute;top:34px;left:0;right:0;height:4px;background:var(--line)}
+.proc-fill{position:absolute;top:34px;left:0;height:4px;background:var(--kraft);width:0}
+.proc-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative}
+.ps .ic{width:72px;height:72px;background:var(--off);border:4px solid var(--line);display:grid;place-items:center;margin-bottom:22px;transition:all .5s var(--ease)}
+.ps.lit .ic{background:var(--green);border-color:var(--kraft)}
+.ps .ic svg{width:30px;height:30px;stroke:var(--green);fill:none;stroke-width:1.7;transition:stroke .5s}
+.ps.lit .ic svg{stroke:#fff}
+.ps small{font-family:var(--head);font-weight:800;color:var(--kraft);font-size:.8rem;letter-spacing:.12em}
+.ps h3{font-size:1.4rem;font-weight:800;margin:6px 0 8px}
+.ps p{font-size:.9rem;color:var(--muted)}
+.ps .pimg{margin-top:18px;aspect-ratio:4/3;overflow:hidden}
+.ps .pimg img{width:100%;height:100%;object-fit:cover;filter:grayscale(1);transition:filter .8s}
+.ps.lit .pimg img{filter:none}
+
+/* infrastructure */
+.infra .wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.infra-imgs{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.infra-imgs img{width:100%;height:100%;object-fit:cover;aspect-ratio:1}
+.infra-imgs img:first-child{grid-column:span 2;aspect-ratio:16/9}
+.spec-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:28px}
+.spec{background:var(--off);padding:20px;transition:background .3s}
+.spec:hover{background:#fff}
+.spec b{font-family:var(--head);font-weight:800;color:var(--green);display:block}
+.spec span{font-size:.84rem;color:var(--muted)}
+.depots{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
+.depots span{background:var(--green);color:#fff;padding:8px 14px;font-size:.82rem;font-weight:600;display:flex;gap:8px;align-items:center}
+.depots svg{width:14px;height:14px;stroke:var(--kraft-2);fill:none;stroke-width:2}
+
+/* quality */
+.quality{background:var(--off);padding-top:0}
+.q-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:40px}
+.q{background:#fff;padding:28px 22px;border-top:3px solid var(--sage);transition:transform .35s var(--ease),border-color .35s}
+.q:hover{transform:translateY(-5px);border-color:var(--kraft)}
+.q svg{width:34px;height:34px;stroke:var(--sage);fill:none;stroke-width:1.6;margin-bottom:16px}
+.q b{font-family:var(--head);font-weight:800;color:var(--green);display:block;font-size:1.05rem}
+.q p{font-size:.84rem;color:var(--muted);margin-top:6px}
+
+/* who we serve */
+.serve{background:#fff}
+.serve-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:50px}
+.sv{border:1px solid var(--line);padding:28px 24px;display:flex;flex-direction:column;gap:12px;position:relative;overflow:hidden;transition:color .4s}
+.sv::before{content:"";position:absolute;inset:0;background:var(--green);transform:translateY(101%);transition:transform .5s var(--ease);z-index:0}
+.sv:hover::before{transform:none}
+.sv>*{position:relative;z-index:1}
+.sv:hover{color:#fff}
+.sv:hover h3{color:#fff}
+.sv .n{font-family:var(--head);font-weight:900;color:var(--kraft);font-size:.9rem}
+.sv h3{font-size:1.3rem;font-weight:800;transition:color .4s}
+.sv p{font-size:.88rem;opacity:.8}
+.sv a{margin-top:auto;font-family:var(--head);font-weight:700;font-size:.82rem;color:var(--kraft)}
+.sv:hover a{color:var(--kraft-2)}
+
+/* dealer cta */
+.dealer{background:var(--green);color:#fff;position:relative;overflow:hidden}
+.dealer::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent 0 37px,rgba(255,255,255,.05) 37px 38px)}
+.dealer::after{content:"";position:absolute;top:0;bottom:0;left:2.5%;width:2px;background:rgba(212,154,90,.35)}
+.dealer .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.3fr 1fr;gap:60px;align-items:center}
+.dealer h2{color:#fff;font-size:clamp(2.4rem,5vw,4.4rem);font-weight:900}
+.dealer p{color:rgba(255,255,255,.8);font-size:1.06rem;max-width:560px}
+.dealer-box{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);padding:30px}
+.dealer-box li{list-style:none;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.1);display:flex;gap:12px;align-items:center}
+.dealer-box li:last-child{border:0}
+.dealer-box svg{width:18px;height:18px;stroke:var(--kraft-2);fill:none;stroke-width:2.4;flex:none}
+.dealer .ctas{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
+.dealer .btn-line{color:#fff}
+.dealer .btn-line:hover{background:#fff;color:var(--green);border-color:#fff}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:12px;margin-top:40px}
+.gal .g{overflow:hidden;cursor:zoom-in;position:relative}
+.gal .g:nth-child(1){grid-column:span 2;grid-row:span 2}
+.gal .g:nth-child(5){grid-column:span 2}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
+.gal .g:hover img{transform:scale(1.06)}
+.gal .g span{position:absolute;left:0;bottom:0;background:var(--kraft);color:#fff;font-family:var(--head);font-weight:700;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;padding:6px 12px;transform:translateY(100%);transition:transform .35s var(--ease)}
+.gal .g:hover span{transform:none}
+.lightbox{position:fixed;inset:0;background:rgba(10,26,23,.95);z-index:100;display:none;align-items:center;justify-content:center}
+.lightbox.on{display:flex;animation:fi .3s}
+.lightbox img{max-height:86vh;max-width:90vw}
+.lightbox button{position:absolute;color:#fff;font-size:2rem;width:56px;height:56px}
+.lb-x{top:16px;right:16px}.lb-p{left:10px;top:50%}.lb-n{right:10px;top:50%}
+
+/* social */
+.social{background:#fff}
+.soc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px}
+.post{aspect-ratio:1;position:relative;overflow:hidden;background:var(--green);color:#fff}
+.post img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.post:hover img{transform:scale(1.07)}
+.post .ov{position:absolute;inset:0;padding:20px;display:flex;flex-direction:column;justify-content:flex-end;background:linear-gradient(180deg,transparent 35%,rgba(23,59,53,.92))}
+.post small{font-family:var(--head);font-weight:700;font-size:.66rem;letter-spacing:.16em;color:var(--kraft-2);text-transform:uppercase}
+.post b{font-family:var(--head);font-weight:800;font-size:1.15rem;line-height:1.15;margin-top:4px}
+.post.type{background:var(--kraft);padding:24px;display:flex;flex-direction:column;justify-content:space-between}
+.post.type .yr{font-family:var(--head);font-weight:900;font-size:3.6rem;line-height:1}
+.post .reel{position:absolute;top:14px;right:14px;width:30px;height:30px;background:rgba(255,255,255,.25);display:grid;place-items:center;border-radius:50%}
+.post .reel svg{width:12px;height:12px;fill:#fff}
+
+/* quote */
+.quote .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px}
+.contact-card{background:var(--green);color:#fff;padding:34px;margin-top:28px}
+.contact-card div{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:.94rem}
+.contact-card div:last-child{border:0}
+.contact-card svg{width:20px;height:20px;stroke:var(--kraft-2);fill:none;stroke-width:1.8;flex:none;margin-top:3px}
+.map{height:240px;margin-top:16px;background:var(--line);position:relative}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(.5)}
+form.qf{background:#fff;border:1px solid var(--line);padding:clamp(26px,4vw,44px);display:grid;grid-template-columns:1fr 1fr;gap:16px}
+form.qf h3{grid-column:span 2;font-size:1.6rem;font-weight:800}
+.f{display:grid;gap:6px}
+.f.full{grid-column:span 2}
+.f label{font-size:.78rem;font-weight:600;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
+.f input,.f select,.f textarea{font:inherit;padding:13px 14px;border:1px solid var(--line);background:var(--off);outline:none;transition:border-color .25s,background .25s}
+.f input:focus,.f select:focus,.f textarea:focus{border-color:var(--kraft);background:#fff}
+.buyer{display:flex;flex-wrap:wrap;gap:8px}
+.buyer label{text-transform:none;letter-spacing:0;font-size:.86rem;color:var(--ink);border:1px solid var(--line);padding:9px 14px;cursor:pointer;transition:all .2s;font-weight:500}
+.buyer input{display:none}
+.buyer input:checked+span{color:#fff}
+.buyer label:has(input:checked){background:var(--green);border-color:var(--green);color:#fff}
+.qf .btn{grid-column:span 2;justify-content:center}
+.qok{grid-column:span 2;display:none;text-align:center;padding:40px 0}
+.qok.on{display:block;animation:fi .5s}
+.qok h3{font-size:1.8rem;margin-bottom:8px}
+
+footer{background:#0F2925;color:rgba(255,255,255,.65);padding:70px 0 26px;font-size:.88rem}
+.f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:34px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.08)}
+footer .logo b{color:#fff}
+footer .logo .mk{background:var(--kraft)}
+footer .logo .mk::after{border-color:transparent #0F2925 transparent transparent}
+footer h4{font-family:var(--head);color:#fff;font-size:.9rem;margin-bottom:14px;font-weight:700}
+footer li{list-style:none;margin-bottom:8px}
+footer a:hover{color:var(--kraft-2)}
+.f-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-top:22px;font-size:.78rem}
+
+.wa{position:fixed;right:22px;bottom:22px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 14px 30px -12px rgba(0,0,0,.45);opacity:0;transform:scale(.6);pointer-events:none;transition:.4s var(--ease)}
+.wa.show{opacity:1;transform:none;pointer-events:auto}
+.wa svg{width:28px;height:28px;fill:#fff}
+.mbar{display:none}
+
+.rv{opacity:0;transform:translateY(36px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
+
+@media (max-width:1100px){
+  .nav ul,.nav .acts{display:none}
+  .burger{display:block}
+  .nav.open ul{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--off);padding:6px 20px 20px;gap:0;border-bottom:1px solid var(--line)}
+  .nav.open ul a{display:block;padding:14px 0;border-bottom:1px solid var(--line)}
+  .hero .wrap,.legacy .wrap,.infra .wrap,.dealer .wrap,.quote .wrap{grid-template-columns:1fr}
+  .legacy-sticky{position:static}
+  .stack{height:380px}
+  .num-grid{grid-template-columns:repeat(3,1fr)}
+  .num:nth-child(3){border-right:0}
+  .num:nth-child(-n+3){border-bottom:1px solid var(--line)}
+  .brand-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:16px}
+  .brand{flex:0 0 220px;scroll-snap-align:start}
+  .prod-grid,.serve-grid,.soc-grid{grid-template-columns:repeat(2,1fr)}
+  .q-grid{grid-template-columns:repeat(3,1fr)}
+  .f-grid{grid-template-columns:1fr 1fr}
+  .topbar .hide-m{display:none}
+}
+@media (max-width:640px){
+  body{padding-bottom:62px}
+  .topbar{display:none}
+  .stack{height:320px;transform:scale(.8)}
+  .num-grid{grid-template-columns:1fr 1fr}
+  .num{border-bottom:1px solid var(--line)}
+  .num:nth-child(odd){border-right:1px solid var(--line)}
+  .num:nth-child(even){border-right:0}
+  .proc-steps{grid-template-columns:1fr;gap:40px}
+  .proc-line,.proc-fill{display:none}
+  .prod-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:-20px;padding:0 20px 10px}
+  .prod{flex:0 0 78%;scroll-snap-align:center}
+  .serve-grid,.q-grid,.spec-grid{grid-template-columns:1fr}
+  .gal{grid-template-columns:1fr 1fr;grid-auto-rows:150px}
+  .gal .g:nth-child(5){grid-column:auto}
+  form.qf{grid-template-columns:1fr}
+  form.qf h3,.f.full,.qf .btn,.qok{grid-column:auto}
+  .f-grid{grid-template-columns:1fr}
+  .wa{display:none}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:60}
+  .mbar a{padding:18px;text-align:center;font-family:var(--head);font-weight:700;color:#fff}
+  .mbar a:first-child{background:var(--kraft)}.mbar a:last-child{background:var(--green)}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .rv,.fi{opacity:1;transform:none}
+}
+:focus-visible{outline:2px solid var(--kraft);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap"><span><b>ISO 9001:2015</b> certified manufacturer · Since 1978</span><span class="hide-m">Peacock House, Naya Ganj, Raigarh, Chhattisgarh · Depots: Ranchi &amp; Raipur</span></div></div>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="logo"><span class="mk"><span>S</span></span><span><b>SEEMA PAPER</b><small>INDUSTRIES PVT. LTD.</small></span></a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#manufacturing">Manufacturing</a></li>
+      <li><a href="#brands">Brands</a></li>
+      <li><a href="#partners">Partners</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="acts">
+      <a href="#contact" class="btn btn-line" style="color:var(--green)" data-buyer="Dealer / Distributor">Become a Dealer</a>
+      <a href="#contact" class="btn btn-kraft">Get a Quote</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-bg"></div><div class="ruled"></div><div class="margin-line"></div>
+  <div class="wrap">
+    <div>
+      <span class="label fi" style="animation-delay:.1s;color:var(--kraft-2)">Notebook &amp; Stationery Manufacturing</span>
+      <h1><span class="ln"><span>Paper Products</span></span><span class="ln"><span>Built for Scale.</span></span><span class="ln"><span>Quality Built</span></span><span class="ln"><span>to Last.</span></span></h1>
+      <p class="fi" style="animation-delay:.6s">Manufacturing dependable notebooks and stationery products with decades of paper expertise, modern infrastructure and a growing distribution network.</p>
+      <div class="ctas fi" style="animation-delay:.8s">
+        <a href="#products" class="btn btn-kraft">Explore Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#contact" class="btn btn-line">Get a Quote</a>
+      </div>
+    </div>
+    <div class="stack" aria-hidden="true">
+      <div class="nb nb1"><div class="lab"></div><div class="t"><small>EXERCISE BOOK</small>PEACOCK</div></div>
+      <div class="nb nb2"><div class="lab"></div><div class="t"><small>COLLEGE RANGE</small>U TECH</div></div>
+      <div class="nb nb3"><div class="lab"></div><div class="t"><small>SUSTAINABLE</small>ECOPAGE</div></div>
+      <div class="iso"><svg viewBox="0 0 24 24"><path d="M12 2l3 3h4v4l3 3-3 3v4h-4l-3 3-3-3H5v-4l-3-3 3-3V5h4z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>ISO 9001:2015</div>
+    </div>
+  </div>
+</section>
+
+<!-- Numbers -->
+<section class="numbers">
+  <div class="wrap">
+    <div class="num-grid">
+      <div class="num"><b data-to="1978" data-plain>1978</b><span>Year established</span></div>
+      <div class="num"><b><i data-to="40000">0</i></b><span>Sq ft manufacturing area</span></div>
+      <div class="num"><b><i data-to="1000">0</i>+ MT</b><span>Paper storage capacity</span></div>
+      <div class="num"><b><i data-to="250">0</i>+ MT</b><span>Monthly paper consumption*</span></div>
+      <div class="num"><b><i data-to="150">0</i>+</b><span>Institutions served*</span></div>
+      <div class="num"><b><i data-to="350">0</i>+</b><span>Dealers &amp; retail network*</span></div>
+    </div>
+    <p class="num-note">*Figures from current company materials — to be re-confirmed before publishing.</p>
+  </div>
+</section>
+
+<!-- Legacy -->
+<section class="legacy" id="about">
+  <div class="wrap">
+    <div class="legacy-sticky">
+      <span class="label rv">Our Legacy</span>
+      <h2 class="rv d1">Five Decades of Paper &amp; <span>Notebook Expertise.</span></h2>
+      <p class="lead rv d2">Founded in 1978, Seema Paper Industries has evolved alongside the notebook manufacturing industry — from conventional manual processes to a modern operation supported by advanced machinery, quality systems and distribution infrastructure.</p>
+      <div class="year-big" id="yearBig">1978</div>
+    </div>
+    <div class="tl" id="tl">
+      <span class="tl-fill" id="tlFill"></span>
+      <div class="tl-item" data-y="1978"><small>1978</small><h3>The beginning</h3><p>Late Shri R.D. Gupta starts the business in Raigarh, Chhattisgarh, built on a commitment to quality paper products.</p></div>
+      <div class="tl-item" data-y="1990s"><small>GROWTH</small><h3>From manual to mechanised</h3><p>The company evolves from manual manufacturing, steadily introducing machinery to raise consistency and output.</p><img src="https://images.unsplash.com/photo-1586075010923-2dd4570fb338?w=900&h=450&fit=crop&q=65&auto=format" alt="Paper sheets" loading="lazy"></div>
+      <div class="tl-item" data-y="ISO"><small>QUALITY</small><h3>ISO 9001:2015 certified</h3><p>Quality systems formalised across sourcing, production, appraisal and packing.</p></div>
+      <div class="tl-item" data-y="Today"><small>TODAY</small><h3>A modern manufacturing operation</h3><p>A 40,000 sq ft facility, automatic exercise-book and binding equipment, five product brands and depots in Ranchi and Raipur.</p><img src="https://images.unsplash.com/photo-1565043666747-69f6646db940?w=900&h=450&fit=crop&q=65&auto=format" alt="Modern factory" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Brands -->
+<section class="brands" id="brands">
+  <div class="wrap">
+    <span class="label rv" style="color:var(--kraft-2)">Our Brands</span>
+    <h2 class="rv d1">Five Brands. <span style="color:var(--kraft-2)">One Standard of Quality.</span></h2>
+    <p class="lead rv d2">Each brand serves a different buyer — from schools and colleges to retail shelves and sustainability-focused customers.</p>
+    <div class="brand-grid">
+      <a href="#products" class="brand rv" style="--c:#C4442F" data-f="peacock"><small>Core Range</small><div><b>PEACOCK</b><p>Exercise books, bound &amp; unbound books, soft-bound, graph and more.</p></div><span class="go">View catalogue →</span></a>
+      <a href="#products" class="brand rv d1" style="--c:#2D6A8E" data-f="utech"><small>Student / College</small><div><b>U TECH</b><p>College notebooks in clear sizes, types and categories.</p></div><span class="go">View catalogue →</span></a>
+      <a href="#products" class="brand rv d2" style="--c:#6A4C93" data-f="novelity"><small>Design-led</small><div><b>NOVELITY</b><p>Notebooks with stronger cover design and visual storytelling.</p></div><span class="go">View catalogue →</span></a>
+      <a href="#products" class="brand rv d3" style="--c:#C98A1B" data-f="kopyko"><small>Everyday</small><div><b>KOPYKO</b><p>A dedicated range from the current approved catalogue.</p></div><span class="go">View catalogue →</span></a>
+      <a href="#products" class="brand rv d4" style="--c:#4E7D5B" data-f="ecopage"><small>Sustainable</small><div><b>ECOPAGE</b><p>A range focused on eco-conscious production and materials.</p></div><span class="go">View catalogue →</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- Products -->
+<section class="products" id="products">
+  <div class="wrap">
+    <div class="prod-head">
+      <div><span class="label rv">Featured Products</span><h2 class="rv d1">Notebook Families for <span>Every Buyer</span></h2></div>
+      <p class="lead rv d2">Request bulk pricing on any product — no checkout, just a direct line to our sales team.</p>
+    </div>
+    <div class="filters rv">
+      <button class="on" data-f="all">All</button>
+      <button data-f="school">School</button>
+      <button data-f="college">College</button>
+      <button data-f="office">Office &amp; Diaries</button>
+    </div>
+    <div class="prod-grid" id="prodGrid">
+      <div class="prod" data-cat="school"><div class="prod-img"><img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=700&h=525&fit=crop&q=65&auto=format" alt="Exercise books" loading="lazy"><div class="specs">Ruled · Unruled · Graph · Multiple page counts</div></div><div class="prod-body"><small>Peacock</small><h3>Exercise Books</h3><div class="prod-actions"><a href="#">View Catalogue</a><a href="#contact" data-p="Exercise Books">Get Quote</a></div></div></div>
+      <div class="prod" data-cat="college"><div class="prod-img"><img src="https://images.unsplash.com/photo-1531346878377-a5be20888e57?w=700&h=525&fit=crop&q=65&auto=format" alt="Spiral notebook" loading="lazy"><div class="specs">Single &amp; multi-subject · A4 / A5</div></div><div class="prod-body"><small>U Tech</small><h3>Spiral Notebooks</h3><div class="prod-actions"><a href="#">View Catalogue</a><a href="#contact" data-p="Spiral Notebooks">Get Quote</a></div></div></div>
+      <div class="prod" data-cat="college"><div class="prod-img"><img src="https://images.unsplash.com/photo-1544816155-12df9643f363?w=700&h=525&fit=crop&q=65&auto=format" alt="College notebooks" loading="lazy"><div class="specs">Long-book &amp; regular sizes · Ruled</div></div><div class="prod-body"><small>U Tech</small><h3>College Notebooks</h3><div class="prod-actions"><a href="#">View Catalogue</a><a href="#contact" data-p="College Notebooks">Get Quote</a></div></div></div>
+      <div class="prod" data-cat="office"><div class="prod-img"><img src="https://images.unsplash.com/photo-1517842645767-c639042777db?w=700&h=525&fit=crop&q=65&auto=format" alt="Pocket diary" loading="lazy"><div class="specs">Pocket sizes · Dated &amp; undated</div></div><div class="prod-body"><small>Novelity</small><h3>Pocket Diaries</h3><div class="prod-actions"><a href="#">View Catalogue</a><a href="#contact" data-p="Pocket Diaries">Get Quote</a></div></div></div>
+      <div class="prod" data-cat="school"><div class="prod-img"><img src="https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?w=700&h=525&fit=crop&q=65&auto=format" alt="Soft-bound notebooks" loading="lazy"><div class="specs">Soft-bound · Bright printed covers</div></div><div class="prod-body"><small>Peacock</small><h3>Soft-bound Notebooks</h3><div class="prod-actions"><a href="#">View Catalogue</a><a href="#contact" data-p="Soft-bound Notebooks">Get Quote</a></div></div></div>
+      <div class="prod" data-cat="office"><div class="prod-img"><img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=700&h=525&fit=crop&q=65&auto=format" alt="Registers" loading="lazy"><div class="specs">Long registers · Office &amp; accounts use</div></div><div class="prod-body"><small>Kopyko</small><h3>Registers</h3><div class="prod-actions"><a href="#">View Catalogue</a><a href="#contact" data-p="Registers">Get Quote</a></div></div></div>
+      <div class="prod" data-cat="school college"><div class="prod-img"><img src="https://images.unsplash.com/photo-1600369671236-e74521d4b6ad?w=700&h=525&fit=crop&q=65&auto=format" alt="Tight-bound notebook" loading="lazy"><div class="specs">Tight-bound / hard-bound · Durable</div></div><div class="prod-body"><small>Peacock</small><h3>Tight-bound Notebooks</h3><div class="prod-actions"><a href="#">View Catalogue</a><a href="#contact" data-p="Tight-bound Notebooks">Get Quote</a></div></div></div>
+      <div class="prod" data-cat="school college office"><div class="prod-img"><img src="https://images.unsplash.com/photo-1586075010923-2dd4570fb338?w=700&h=525&fit=crop&q=65&auto=format" alt="Eco notebooks" loading="lazy"><div class="specs">Eco-conscious range · Range to be confirmed</div></div><div class="prod-body"><small>Ecopage</small><h3>Eco Notebooks</h3><div class="prod-actions"><a href="#">View Catalogue</a><a href="#contact" data-p="Eco Notebooks">Get Quote</a></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Manufacturing -->
+<section class="mfg" id="manufacturing">
+  <div class="wrap">
+    <span class="label rv">Manufacturing</span>
+    <h2 class="rv d1">Built In-House. <span>Controlled At Every Step.</span></h2>
+    <p class="lead rv d2">Paper sourcing, in-house ruling, binding, cutting, finishing, quality appraisal and packaging come together in a controlled workflow designed for consistent quality.</p>
+    <div class="process" id="process">
+      <span class="proc-line"></span><span class="proc-fill" id="procFill"></span>
+      <div class="proc-steps">
+        <div class="ps"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4zM4 10h16"/></svg></div><small>STEP 01</small><h3>Paper Sourcing</h3><p>Quality paper selected and stored in our 1000+ MT facility.</p><div class="pimg"><img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=450&fit=crop&q=65&auto=format" alt="Paper storage" loading="lazy"></div></div>
+        <div class="ps"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 11h16M4 15h16M4 19h10M8 3v18"/></svg></div><small>STEP 02</small><h3>Cover &amp; Ruling</h3><p>In-house ruling and cover printing for every format.</p><div class="pimg"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=450&fit=crop&q=65&auto=format" alt="Machinery" loading="lazy"></div></div>
+        <div class="ps"><div class="ic"><svg viewBox="0 0 24 24"><path d="M6 3v18M6 6h12v12H6M10 3v3M14 3v3"/></svg></div><small>STEP 03</small><h3>Binding &amp; Finishing</h3><p>Automatic binding, spiral, cutting and post-press finishing.</p><div class="pimg"><img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600&h=450&fit=crop&q=65&auto=format" alt="Finishing" loading="lazy"></div></div>
+        <div class="ps"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 8l9-5 9 5v8l-9 5-9-5zM3 8l9 5 9-5M12 13v8"/></svg></div><small>STEP 04</small><h3>Quality &amp; Packing</h3><p>Quality appraisal, packing and dispatch to depots.</p><div class="pimg"><img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=600&h=450&fit=crop&q=65&auto=format" alt="Warehouse" loading="lazy"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Infrastructure -->
+<section class="infra">
+  <div class="wrap">
+    <div class="infra-imgs rv">
+      <img src="https://images.unsplash.com/photo-1565043666747-69f6646db940?w=1000&h=560&fit=crop&q=65&auto=format" alt="Factory floor" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=500&h=500&fit=crop&q=65&auto=format" alt="Storage" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?w=500&h=500&fit=crop&q=65&auto=format" alt="Finished notebooks" loading="lazy">
+    </div>
+    <div>
+      <span class="label rv">Infrastructure</span>
+      <h2 class="rv d1">Capacity You Can <span>Plan Around.</span></h2>
+      <p class="lead rv d2">Modern equipment and storage that support consistent output for dealers, institutions and bulk buyers.</p>
+      <div class="spec-grid rv d3">
+        <div class="spec"><b>40,000 sq ft</b><span>Manufacturing facility</span></div>
+        <div class="spec"><b>1000+ MT</b><span>Paper storage capacity</span></div>
+        <div class="spec"><b>Automatic</b><span>Exercise-book machine</span></div>
+        <div class="spec"><b>Automatic</b><span>Binding equipment</span></div>
+        <div class="spec"><b>Spiral &amp; Register</b><span>Dedicated production lines</span></div>
+        <div class="spec"><b>Post-press</b><span>Cutting &amp; packing units</span></div>
+      </div>
+      <div class="depots rv d4"><span><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/></svg>Raigarh — HQ &amp; Plant</span><span><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/></svg>Ranchi Depot</span><span><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/></svg>Raipur Depot</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Quality -->
+<section class="quality">
+  <div class="wrap">
+    <span class="label rv">Quality &amp; Sustainability</span>
+    <h2 class="rv d1">What We <span>Stand For</span></h2>
+    <div class="q-grid">
+      <div class="q rv"><svg viewBox="0 0 24 24"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg><b>Premium Quality</b><p>Consistent paper and finish.</p></div>
+      <div class="q rv d1"><svg viewBox="0 0 24 24"><path d="M5 21c0-9 5-15 15-17-1 10-7 15-15 17zM5 21l7-7"/></svg><b>Eco-Friendly Production</b><p>Responsible processes.</p></div>
+      <div class="q rv d2"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg><b>Quality Control</b><p>Appraisal at every stage.</p></div>
+      <div class="q rv d3"><svg viewBox="0 0 24 24"><path d="M3 7h12v10H3zM15 10h4l2 3v4h-6"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg><b>Reliable Supply</b><p>Depots that keep stock moving.</p></div>
+      <div class="q rv d4"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5M16 11a3 3 0 1 0 0-6M21 20c0-2-1.5-4-4-4.6"/></svg><b>Customer-Centric</b><p>Custom paper solutions.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Who we serve -->
+<section class="serve" id="partners">
+  <div class="wrap">
+    <span class="label rv">Who We Serve</span>
+    <h2 class="rv d1">A Supply Partner for <span>Every Channel</span></h2>
+    <div class="serve-grid">
+      <div class="sv rv"><span class="n">01</span><h3>Domestic Distribution</h3><p>Dealers and distributors across our region.</p><a href="#contact" data-buyer="Dealer / Distributor">Enquire →</a></div>
+      <div class="sv rv d1"><span class="n">02</span><h3>Institutional &amp; School Supply</h3><p>Bulk notebooks for schools and colleges.</p><a href="#contact" data-buyer="School / Institution">Enquire →</a></div>
+      <div class="sv rv d2"><span class="n">03</span><h3>Retail Chains</h3><p>Shelf-ready ranges with consistent supply.</p><a href="#contact" data-buyer="Retailer">Enquire →</a></div>
+      <div class="sv rv d3"><span class="n">04</span><h3>Government Supply</h3><p>Tender and programme requirements.</p><a href="#contact" data-buyer="Government">Enquire →</a></div>
+      <div class="sv rv"><span class="n">05</span><h3>White Labeling</h3><p>Your brand, our manufacturing.</p><a href="#contact" data-buyer="White Label">Enquire →</a></div>
+      <div class="sv rv d1"><span class="n">06</span><h3>Export &amp; Logistics</h3><p>Packing and dispatch for larger orders.</p><a href="#contact" data-buyer="Export">Enquire →</a></div>
+      <div class="sv rv d2"><span class="n">07</span><h3>Bulk &amp; Corporate</h3><p>Diaries, registers and notebooks for teams.</p><a href="#contact" data-buyer="Corporate / Bulk">Enquire →</a></div>
+      <div class="sv rv d3" style="background:var(--off)"><span class="n">→</span><h3>Not sure where you fit?</h3><p>Tell us what you need and we'll guide you.</p><a href="#contact">Talk to sales →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- Dealer CTA -->
+<section class="dealer">
+  <div class="wrap">
+    <div>
+      <span class="label rv" style="color:var(--kraft-2)">Partner With Us</span>
+      <h2 class="rv d1">Build Your Market With Seema Paper.</h2>
+      <p class="rv d2">Dealers, distributors, schools, institutional buyers and bulk purchasers — connect with our team for pricing, catalogues and supply terms.</p>
+      <div class="ctas rv d3">
+        <a href="#contact" class="btn btn-kraft" data-buyer="Dealer / Distributor">Become a Dealer <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#contact" class="btn btn-line">Request a Quote</a>
+      </div>
+    </div>
+    <ul class="dealer-box rv d2">
+      <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Five brands under one supplier</li>
+      <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>In-house manufacturing since 1978</li>
+      <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Depots in Ranchi &amp; Raipur</li>
+      <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>Bulk pricing &amp; custom requirements</li>
+      <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>ISO 9001:2015 certified processes</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section class="gallery">
+  <div class="wrap">
+    <span class="label rv">Gallery</span>
+    <h2 class="rv d1">Inside <span>Seema Paper</span></h2>
+    <div class="gal" id="gal">
+      <div class="g rv"><img src="https://images.unsplash.com/photo-1565043666747-69f6646db940?w=1000&q=65&auto=format" alt="Factory" loading="lazy"><span>Factory</span></div>
+      <div class="g rv d1"><img src="https://images.unsplash.com/photo-1531346878377-a5be20888e57?w=600&q=65&auto=format" alt="Products" loading="lazy"><span>Products</span></div>
+      <div class="g rv d2"><img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=65&auto=format" alt="Warehouse" loading="lazy"><span>Warehouse</span></div>
+      <div class="g rv d1"><img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600&q=65&auto=format" alt="Production" loading="lazy"><span>Production</span></div>
+      <div class="g rv d2"><img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=1000&q=65&auto=format" alt="Distribution" loading="lazy"><span>Distribution</span></div>
+      <div class="g rv d3"><img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&q=65&auto=format" alt="School use" loading="lazy"><span>In Use</span></div>
+    </div>
+  </div>
+</section>
+<div class="lightbox" id="lb"><button class="lb-x" aria-label="Close">×</button><button class="lb-p" aria-label="Previous">‹</button><img alt=""><button class="lb-n" aria-label="Next">›</button></div>
+
+<!-- Social -->
+<section class="social">
+  <div class="wrap">
+    <div class="prod-head" style="margin-bottom:0">
+      <div><span class="label rv">@seemapaper</span><h2 class="rv d1">From the <span>Factory Floor</span></h2></div>
+      <a href="#" class="btn btn-green rv">Follow on Instagram</a>
+    </div>
+    <div class="soc-grid">
+      <a href="#" class="post rv"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=500&h=500&fit=crop&q=65&auto=format" alt="" loading="lazy"><span class="reel"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><div class="ov"><small>How It's Made</small><b>From paper roll to finished notebook</b></div></a>
+      <a href="#" class="post type rv d1"><small style="color:#fff;opacity:.85">Legacy</small><div><span class="yr">1978</span><b style="display:block;margin-top:8px">Where it all began — our story in 60 seconds.</b></div></a>
+      <a href="#" class="post rv d2"><img src="https://images.unsplash.com/photo-1544816155-12df9643f363?w=500&h=500&fit=crop&q=65&auto=format" alt="" loading="lazy"><div class="ov"><small>New Range</small><b>U TECH college notebooks — swipe for sizes</b></div></a>
+      <a href="#" class="post rv d3"><img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=500&h=500&fit=crop&q=65&auto=format" alt="" loading="lazy"><div class="ov"><small>Dealers Wanted</small><b>Grow with Seema Paper — DM to partner</b></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- Quote -->
+<section class="quote" id="contact">
+  <div class="wrap">
+    <div>
+      <span class="label rv">Get a Quote</span>
+      <h2 class="rv d1">Looking for a reliable <span>supply partner?</span></h2>
+      <p class="lead rv d2">Tell us what you need — product category, quantity and buyer type — and connect with the Seema Paper Industries team.</p>
+      <div class="contact-card rv d3">
+        <div><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><span>Peacock House, 20/184, Naya Ganj,<br>Raigarh, Chhattisgarh, India</span></div>
+        <div><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><a href="tel:+910000000000">+91 XXXXX XXXXX</a></div>
+        <div><svg viewBox="0 0 24 24"><path d="M3 6h18v12H3zM3 6l9 7 9-7"/></svg><a href="mailto:sales@seemapaper.com">sales@seemapaper.com</a></div>
+        <div><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 1-13.4 7.8L3 21l1.2-4.5A9 9 0 1 1 21 12z"/></svg><a href="https://wa.me/910000000000" target="_blank" rel="noopener">WhatsApp Sales</a></div>
+      </div>
+      <div class="map rv" id="map" data-src="https://maps.google.com/maps?q=Naya%20Ganj%20Raigarh%20Chhattisgarh&z=15&output=embed"></div>
+    </div>
+    <form class="qf rv d2" id="qf">
+      <h3>Request a Quote</h3>
+      <div class="f"><label for="qn">Name</label><input id="qn" required></div>
+      <div class="f"><label for="qc">Company</label><input id="qc"></div>
+      <div class="f full"><label>Buyer Type</label>
+        <div class="buyer" id="buyer">
+          <label><input type="radio" name="bt" value="Dealer / Distributor" checked>Dealer / Distributor</label>
+          <label><input type="radio" name="bt" value="School / Institution">School / Institution</label>
+          <label><input type="radio" name="bt" value="Retailer">Retailer</label>
+          <label><input type="radio" name="bt" value="Government">Government</label>
+          <label><input type="radio" name="bt" value="White Label">White Label</label>
+          <label><input type="radio" name="bt" value="Corporate / Bulk">Corporate / Bulk</label>
+          <label><input type="radio" name="bt" value="Export">Export</label>
+        </div>
+      </div>
+      <div class="f"><label for="qp">Product Interest</label><select id="qp"><option>Exercise Books</option><option>Spiral Notebooks</option><option>College Notebooks</option><option>Soft-bound Notebooks</option><option>Tight-bound Notebooks</option><option>Pocket Diaries</option><option>Registers</option><option>Eco Notebooks</option><option>Multiple / Custom</option></select></div>
+      <div class="f"><label for="qq">Quantity / Requirement</label><input id="qq" placeholder="e.g. 5,000 units / month"></div>
+      <div class="f"><label for="qph">Phone</label><input id="qph" type="tel" required></div>
+      <div class="f"><label for="qe">Email</label><input id="qe" type="email"></div>
+      <div class="f full"><label for="qm">Message</label><textarea id="qm" rows="3"></textarea></div>
+      <button class="btn btn-kraft" type="submit">Send Requirement <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      <div class="qok" id="qok"><h3>Requirement received.</h3><p style="color:var(--muted)">Our sales team will contact you shortly with pricing and availability.</p></div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div><a href="#top" class="logo" style="margin-bottom:16px"><span class="mk"><span>S</span></span><span><b>SEEMA PAPER</b><small>INDUSTRIES PVT. LTD.</small></span></a><p>Notebook and stationery manufacturing since 1978. Raigarh, Chhattisgarh.</p></div>
+      <div><h4>Brands</h4><ul><li>Peacock</li><li>U Tech</li><li>Novelity</li><li>Kopyko</li><li>Ecopage</li></ul></div>
+      <div><h4>Products</h4><ul><li>Exercise Books</li><li>Spiral Notebooks</li><li>College Notebooks</li><li>Diaries &amp; Registers</li></ul></div>
+      <div><h4>Business</h4><ul><li><a href="#contact">Become a Dealer</a></li><li><a href="#contact">Institutional Supply</a></li><li><a href="#">Careers</a></li><li><a href="#contact">Contact</a></li></ul></div>
+      <div><h4>Follow</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li><li><a href="#">LinkedIn</a></li></ul></div>
+    </div>
+    <div class="f-bottom"><span>© 2026 Seema Paper Industries Pvt. Ltd. · seemapaper.com</span><span><a href="#">Privacy</a> · <a href="#">Terms</a> · Concept by Standout</span></div>
+  </div>
+</footer>
+
+<a class="wa" id="wa" href="https://wa.me/910000000000" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3z"/></svg></a>
+<div class="mbar"><a href="#contact">Get a Quote</a><a href="https://wa.me/910000000000">WhatsApp</a></div>
+
+<script>
+const nav=document.getElementById('nav'),wa=document.getElementById('wa');
+function onScroll(){nav.classList.toggle('sh',scrollY>10);wa.classList.toggle('show',scrollY>700);timeline();process()}
+addEventListener('scroll',onScroll,{passive:true});
+document.getElementById('burger').onclick=()=>nav.classList.toggle('open');
+nav.querySelectorAll('ul a').forEach(a=>a.onclick=()=>nav.classList.remove('open'));
+
+// reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15,rootMargin:'0px 0px -40px'});
+document.querySelectorAll('.rv,.num').forEach(el=>io.observe(el));
+
+// counters
+const fmt=n=>n.toLocaleString('en-IN');
+const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;cio.unobserve(e.target);
+  e.target.querySelectorAll('[data-to]').forEach(el=>{if(el.hasAttribute('data-plain'))return;const to=+el.dataset.to,t0=performance.now(),d=1800;
+    const step=t=>{const p=Math.min(1,(t-t0)/d),v=Math.round(to*(1-Math.pow(1-p,4)));el.textContent=fmt(v);if(p<1)requestAnimationFrame(step)};requestAnimationFrame(step)})}),{threshold:.4});
+document.querySelectorAll('.num').forEach(n=>cio.observe(n));
+// year counter 1900->1978 for the first stat
+const yEl=document.querySelector('[data-plain]');
+new IntersectionObserver((es,o)=>{if(!es[0].isIntersecting)return;o.disconnect();const t0=performance.now();const s=t=>{const p=Math.min(1,(t-t0)/1600);yEl.textContent=Math.round(1900+78*(1-Math.pow(1-p,4)));if(p<1)requestAnimationFrame(s)};requestAnimationFrame(s)},{threshold:.4}).observe(yEl);
+
+// timeline
+const tl=document.getElementById('tl'),tlf=document.getElementById('tlFill'),items=[...tl.querySelectorAll('.tl-item')],yb=document.getElementById('yearBig');
+function timeline(){const r=tl.getBoundingClientRect(),mid=innerHeight*.6;const h=Math.min(r.height,Math.max(0,mid-r.top));tlf.style.height=h+'px';
+  let last=null;items.forEach(it=>{const lit=it.getBoundingClientRect().top<mid;it.classList.toggle('lit',lit);if(lit)last=it});
+  if(last&&yb.textContent!==last.dataset.y)yb.textContent=last.dataset.y}
+
+// process line
+const pr=document.getElementById('process'),pf=document.getElementById('procFill'),ps=[...pr.querySelectorAll('.ps')];
+function process(){const r=pr.getBoundingClientRect();const p=Math.min(1,Math.max(0,(innerHeight*.8-r.top)/(r.height*.7)));pf.style.width=(p*100)+'%';ps.forEach((s,i)=>s.classList.toggle('lit',p>i/ps.length))}
+onScroll();
+
+// product filter
+document.querySelectorAll('.filters button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filters button').forEach(x=>x.classList.remove('on'));b.classList.add('on');
+  document.querySelectorAll('.prod').forEach(p=>p.classList.toggle('hide',b.dataset.f!=='all'&&!p.dataset.cat.split(' ').includes(b.dataset.f)))});
+
+// prefill quote form from CTAs
+document.querySelectorAll('[data-buyer]').forEach(a=>a.addEventListener('click',()=>{const r=document.querySelector(`#buyer input[value="${a.dataset.buyer}"]`);if(r)r.checked=true}));
+document.querySelectorAll('[data-p]').forEach(a=>a.addEventListener('click',()=>{const s=document.getElementById('qp');[...s.options].forEach(o=>{if(o.text===a.dataset.p)s.value=o.text})}));
+document.getElementById('qf').onsubmit=e=>{e.preventDefault();[...e.target.children].forEach(c=>{if(c.id!=='qok')c.style.display='none'});document.getElementById('qok').classList.add('on')};
+
+// map
+const map=document.getElementById('map');
+new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){const f=document.createElement('iframe');f.src=map.dataset.src;f.title='Seema Paper Industries location';f.loading='lazy';map.appendChild(f);o.disconnect()}},{rootMargin:'200px'}).observe(map);
+
+// lightbox
+const lb=document.getElementById('lb'),lbi=lb.querySelector('img'),gi=[...document.querySelectorAll('#gal img')];let li=0;
+const sh=i=>{li=(i+gi.length)%gi.length;lbi.src=gi[li].src.replace(/w=\d+/,'w=1600');lbi.alt=gi[li].alt};
+gi.forEach((im,i)=>im.parentElement.onclick=()=>{sh(i);lb.classList.add('on')});
+lb.querySelector('.lb-x').onclick=()=>lb.classList.remove('on');
+lb.querySelector('.lb-p').onclick=()=>sh(li-1);lb.querySelector('.lb-n').onclick=()=>sh(li+1);
+lb.onclick=e=>{if(e.target===lb)lb.classList.remove('on')};
+addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;if(e.key==='Escape')lb.classList.remove('on');if(e.key==='ArrowLeft')sh(li-1);if(e.key==='ArrowRight')sh(li+1)});
+</script>
+</body>
+</html>
